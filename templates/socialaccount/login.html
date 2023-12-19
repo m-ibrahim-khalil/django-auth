@@ -1,0 +1,20 @@
+{% extends "account/_base.html" %}
+{% load i18n %}
+{% block form_header %}
+    {% if process == "connect" %}
+        <h5 class="card-title text-center pb-0 fs-4">
+            {% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}
+        </h5>
+        <p class="text-center small">
+            {% blocktrans with provider.name as provider %}You are about to connect a new third party account from {{ provider }}.{% endblocktrans %}
+        </p>
+    {% else %}
+        <h5 class="card-title text-center pb-0 fs-4">
+            {% blocktrans with provider.name as provider %}Sign Up With {{ provider }}{% endblocktrans %}
+        </h5>
+        <p class="text-center small">
+            {% blocktrans with provider.name as provider %}You are about to sign in using a third party account from {{ provider }}.{% endblocktrans %}
+        </p>
+        <button class="btn btn-primary w-60" type="submit">Continue</button>
+    {% endif %}
+{% endblock %}

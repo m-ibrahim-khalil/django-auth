@@ -1,13 +1,11 @@
-{% extends "_base.html" %}
+{% extends "account/_base.html" %}
 {% load account %}
 {% load crispy_forms_tags %}
-{% block content %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <p>
-            Please confirm that <strong>{{ confirmation.email_address.email }}</strong> is your email address
-        </p>
-        <button class="btn btn-primary" type="submit">Comfirm</button>
-    </form>
-{% endblock content %}
+{% block form_body %}
+    {% csrf_token %}
+    {{ form|crispy }}
+    <p>
+        Please confirm that <strong>{{ confirmation.email_address.email }}</strong> is your email address
+    </p>
+    <button class="btn btn-primary" type="submit">Comfirm</button>
+{% endblock %}

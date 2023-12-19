@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+            <form method="post">
+                <div class="text-center mb-4">
+                    {% block form_header %}{% endblock %}
+                </div>
+                {% csrf_token %}
+                {% block form_body %}{% endblock %}
+            </form>
+        </div>
+    </div>
+{% endblock %}
