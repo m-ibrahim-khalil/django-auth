@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
+{% load account %}
 {% block content %}
     <h1>User Profile</h1>
-    <!-- Add your user profile content here -->
+    <p>Username: {{ user.email }}</p>
 {% endblock %}

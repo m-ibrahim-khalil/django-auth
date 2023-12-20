@@ -9,3 +9,7 @@ def index(request):
 
 def profile(request):
     return render(request, "myapp/profile.html")
+
+
+def manage_account(request):
+    return render(request, "myapp/manage_account.html")
