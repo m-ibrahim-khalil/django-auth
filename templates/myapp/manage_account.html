@@ -4,15 +4,6 @@
     <h1>Manage Account</h1>
     <p>Username: {{ user.email }}</p>
     <p>
-        <a href="{% url 'account_logout' %}">Logout</a>
-    </p>
-    <p>
         <a href="{% url 'account_change_password' %}">Change Password</a>
-    </p>
-    <p>
-        <a href="{% url 'account_email' %}">Change Email</a>
-    </p>
-    <p>
-        <a href="{% url 'account_email_verification_sent' %}">Resend Email Verification</a>
     </p>
 {% endblock %}
