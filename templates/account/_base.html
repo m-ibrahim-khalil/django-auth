@@ -5,6 +5,9 @@
             <form method="post">
                 <div class="text-center mb-4">
                     {% block form_header %}{% endblock %}
+                    {% if messages %}
+                        {% for message in messages %}<p class="text-center mt-3">{{ message }}</p>{% endfor %}
+                    {% endif %}
                 </div>
                 {% csrf_token %}
                 {% block form_body %}{% endblock %}
